@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-wzgl" insertBefore="administration">
+        <menu id="合同管理">
+            <item screen="wzgl_HT.browse"/>
+        </menu>
+        <menu id="库存管理">
+            <item screen="wzgl_RKD.browse"/>
+            <item screen="wzgl_CKD.browse"/>
+        </menu>
+    </menu>
+</menu-config>

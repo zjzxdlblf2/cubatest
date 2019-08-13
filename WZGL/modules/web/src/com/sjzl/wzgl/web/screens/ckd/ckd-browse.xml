@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="cKDsTable"
+        messagesPack="com.sjzl.wzgl.web.screens.ckd">
+    <data readOnly="true">
+        <collection id="cKDsDc"
+                    class="com.sjzl.wzgl.entity.CKD"
+                    view="cKD-view-group">
+            <loader id="cKDsDl">
+                <query>
+                    <![CDATA[select e from wzgl_CKD e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="cKDsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="cKDsTable"
+                dataLoader="cKDsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="cKDsTable"
+                    width="100%"
+                    dataContainer="cKDsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name" caption="名称"/>
+                <column id="code" caption="编码"/>
+                <column id="gys" caption="供应商名称"/>
+                <column id="bizdate" caption="业务日期"/>
+                <column id="bzjg" caption="编制机构"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="cKDsTable.create"/>
+                <button id="editBtn" action="cKDsTable.edit"/>
+                <button id="removeBtn" action="cKDsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd" messagesPack="com.sjzl.wzgl.web.screens.ckd"
+        extends="com/sjzl/framework/web/screens/basebill/base-bill-edit.xml">
+    <data>
+        <instance id="cKDDc" class="com.sjzl.wzgl.entity.CKD" view="cKD-view-group">
+            <loader/>
+        </instance>
+    </data>
+    <layout>
+        <groupBox>
+            <form id="form">
+                <column id="column">
+                    <tabSheet id="tabSheet">
+                        <tab id="tab">
+                            <textField id="codeField" dataContainer="cKDDc" width="661px"
+                                       caption="&#22522;&#26412;&#20449;&#24687;"/>
+                        </tab>
+                        <tab id="tab_1">
+                            <dateField id="bizdateField" dataContainer="cKDDc"/>
+                        </tab>
+                        <tab id="tab_2">
+                            <pickerField id="bzjgField" dataContainer="cKDDc">
+                                <actions>
+                                    <action id="lookup" type="picker_lookup"/>
+                                    <action id="clear" type="picker_clear"/>
+                                </actions>
+                            </pickerField>
+                        </tab>
+                        <tab caption="Tab" margin="true,false,false,false" spacing="true">
+                            <textField id="gysField" property="gys" dataContainer="cKDDc"/>
+                        </tab>
+                    </tabSheet>
+                </column>
+            </form>
+        </groupBox>
+    </layout>
+</window>

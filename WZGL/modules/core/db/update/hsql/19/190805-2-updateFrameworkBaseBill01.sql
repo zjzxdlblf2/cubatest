@@ -1,0 +1,1 @@
+update FRAMEWORK_BASE_BILL set DTYPE = 'framework_BaseBill' where DTYPE is null ;

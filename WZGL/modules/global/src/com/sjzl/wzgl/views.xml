@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="wzgl_RKD" name="rKD-view-group" extends="_base">
+        <property name="bzjg" view="_minimal">
+            <property name="parent" view="_minimal"/>
+        </property>
+    </view>
+    <view entity="wzgl_CKD" name="cKD-view-group" extends="_base">
+        <property name="bzjg" view="_minimal"/>
+    </view>
+    <view entity="wzgl_HT" name="hT-view-group" extends="_base"/>
+</views>

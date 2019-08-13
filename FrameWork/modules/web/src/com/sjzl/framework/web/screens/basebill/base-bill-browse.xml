@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="baseBillsTable"
+        messagesPack="com.sjzl.framework.web.screens.basebill">
+    <data readOnly="true">
+        <collection id="baseBillsDc"
+                    class="com.sjzl.framework.entity.BaseBill"
+                    view="baseBill-view-group">
+            <loader id="baseBillsDl">
+                <query>
+                    <![CDATA[select e from framework_BaseBill e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="baseBillsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="baseBillsTable"
+                dataLoader="baseBillsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="baseBillsTable"
+                    width="100%"
+                    dataContainer="baseBillsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="code"/>
+                <column id="bizdate"/>
+                <column id="bzjg"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="baseBillsTable.create"/>
+                <button id="editBtn" action="baseBillsTable.edit"/>
+                <button id="removeBtn" action="baseBillsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.sjzl.framework.web.screens.basebill">
+    <data>
+        <instance id="baseBillDc"
+                  class="com.sjzl.framework.entity.BaseBill"
+                  view="baseBill-view-group">
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <groupBox showAsPanel="true">
+            <buttonsPanel id="buttonsPanel">
+                <button action="windowCommitAndClose" icon="SAVE" stylename="primary"/>
+                <button action="windowClose" icon="CLOSE" stylename="friendly"/>
+                <button caption="fffffffffff" stylename="danger"/>
+                <button caption="dddddddddddd" stylename="borderless"/>
+                <button caption="aaaaaaaaaaaa" stylename="icon-align-right"/>
+                <button caption="bbbbbbbbbbbbbb" stylename="icon-align-top"/>
+                <button stylename="borderless-colored" caption="ccccccccccccc"/>
+            </buttonsPanel>
+            <form id="form" dataContainer="baseBillDc" height="288px">
+                <column id="column" width="1024px">
+                    <tabSheet id="tabSheet" align="TOP_LEFT" width="1024px">
+                        <tab id="tab" caption="&#22522;&#26412;&#20449;&#24687;" margin="true" spacing="true"
+                             width="661px">
+                            <textField id="codeField" dataContainer="baseBillDc" property="code"/>
+                        </tab>
+                        <tab id="tab_1" caption="&#35774;&#22791;&#26126;&#32454;" margin="true" spacing="true"
+                             width="664px">
+                            <dateField id="bizdateField" dataContainer="baseBillDc" property="bizdate"/>
+                        </tab>
+                        <tab id="tab_2" caption="&#38468;&#20214;&#20449;&#24687;" margin="true" spacing="true"
+                             width="662px" height="70px">
+                            <pickerField id="bzjgField" dataContainer="baseBillDc" property="bzjg"/>
+                        </tab>
+                    </tabSheet>
+                    <textField id="nameField" property="name"/>
+                </column>
+            </form>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+        </hbox>
+    </layout>
+</window>
